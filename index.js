@@ -23,11 +23,6 @@ const db = mongoose.connection
 app.use(json())
 app.use(urlencoded({extended: true}))
 app.use(router)
-const PORT = 3000
 
-
-app.listen(PORT, _ => {
-    db.once('open', () => {
-        console.log('Connected to mongoDB')
-    })
-})
+var port_number = server.listen(process.env.PORT || 3000);
+app.listen(port_number);
