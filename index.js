@@ -24,5 +24,7 @@ app.use(json())
 app.use(urlencoded({extended: true}))
 app.use(router)
 
-var port_number = server.listen(process.env.PORT || 5000);
-app.listen(port_number, '0.0.0.0');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
