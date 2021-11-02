@@ -1,17 +1,17 @@
 module.exports = {
     // method of operation
     post: {
-      tags: ["Food CRUD"], // operation's tag.
-      description: "Create new Food", // operation's desc.
-      operationId: "postFood", // unique operation id.
+      tags: ["Categories CRUD"], // operation's tag.
+      description: "Create new Categories", // operation's desc.
+      operationId: "postCategories", // unique operation id.
       requestBody: 
           {
-              description: "Create a new Food",
+              description: "Create a new categories",
               required: true,
               content:{
                   "application/json":{
                       schema:{
-                         $ref: "#/components/schemas/FoodInput"
+                         $ref: "#/components/schemas/CategoriesInput"
                       }
                   } 
               }
@@ -20,19 +20,19 @@ module.exports = {
       responses: {
         // response code
         201: {
-          description: "Food were created", // response desc.
+          description: "Categories were created", // response desc.
           content: {
             // content-type
             "application/json": {
               schema: {
-                $ref: "#/components/schemas/Food", // Todo model
+                $ref: "#/components/schemas/Categories", // Todo model
               },
             },
           },
         },
 
         500:{
-          description: "Food not created", // response desc
+          description: "Categories not created", // response desc
           content:{
             //content-type
             "application/json":{

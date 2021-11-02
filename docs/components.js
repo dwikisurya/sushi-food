@@ -1,11 +1,12 @@
 module.exports={
      components:{
-         schemas:{             
+         schemas:{   
+           // Categories Food          
              Food:{
                  type: "object",
                  properties:{
                     id:{
-                        type: "string",
+                        type: "objectID",
                         description: "Auto Generated from mongodb",
                         example: "6180a4743bdd0334301c3a59"
                     },
@@ -44,7 +45,63 @@ module.exports={
             },
           },
 
+        // Categories Model
+        Categories:{
+          type: "object",
+          properties:{
+             id:{
+                 type: "objectID",
+                 description: "Auto Generated from mongodb",
+                 example: "6181a4e79040370565aa3598"
+             },
+             nameCategories:{
+                 type: "string",
+                 description: "Nama Categories",
+                 example: "Sashimi"
             }
+          }
+      },
+
+      // Categories input model
+              CategoriesInput: {
+                type: "object", // data type
+                properties: {
+                  nameCategories: {
+                    type: "string", // data type
+                    description: "A name of a categories", // desc
+                    example: "Sushi/Sashimi/Rice/Noodle", // example of a title
+                  }
+                },
+              },
+        
+        // Food input model
+        FoodInput: {
+          type: "object", // data type
+          properties: {
+            idCategories: {
+              type: "string", // data type
+              description: "A name of a categories", // desc
+              example: "6181a3139040370565aa3595/6181a4e79040370565aa3598", // example of a title
+            },
+            name:{
+              type: "string",
+              description: "The name for the food",
+              example: "Yakiniku/Rice Bowl"
+            },
+            description:{
+              type: "string",
+              description: "A description for the food",
+              example: "Delicious meat with egg yolk",
+            },
+            imgURL:{
+              type: "string",
+              description: "A link for image",
+              example: "https://i.ibb.co/YDrft4J/baked-salmon-and-egg-bowl-x.jpg"
+            },
+          },
+        },
+
+        }
 
     }
 }

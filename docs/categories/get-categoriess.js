@@ -1,27 +1,27 @@
 module.exports = {
     // method of operation
     get: {
-      tags: ["Food CRUD"], // operation's tag.
-      description: "Get all the Foods", // operation's desc.
-      operationId: "getFoods", // unique operation id.
+      tags: ["Categories CRUD"], // operation's tag.
+      description: "Get categories By id", // operation's desc.
+      operationId: "getCategoriess", // unique operation id.
       parameters: [], // expected params.
       // expected responses
       responses: {
         // response code
         200: {
-          description: "Food were obtained", // response desc.
+          description: "Categories were obtained", // response desc.
           content: {
             // content-type
             "application/json": {
               schema: {
-                $ref: "#/components/schemas/Food", // Todo model
+                $ref: "#/components/schemas/Categories", // Todo model
               },
             },
           },
         },
 
-        404:{
-          description: "Food not found", // response desc
+        500:{
+          description: "Categories not found", // response desc
           content:{
             //content-type
             "application/json":{
