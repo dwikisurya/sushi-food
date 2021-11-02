@@ -16,7 +16,7 @@ module.exports = class FoodControllers {
             const id = request.params.id
             food.findById({_id:id} , (err, food)=>{
                 if(err){
-                response.status(500).send(err)
+                response.status(404).send(err)
                 }
                 response.status(200).json(food)
             })
