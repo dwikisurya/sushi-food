@@ -94,9 +94,9 @@ module.exports={
               example: "Delicious meat with egg yolk",
             },
             imgURL:{
-              type: "string",
-              description: "A link for image",
-              example: "https://i.ibb.co/YDrft4J/baked-salmon-and-egg-bowl-x.jpg"
+              type: "base64",
+              description: "base64 from an uploaded images form front end.",
+              example: "iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEklEQVR42mNcLVNbzwAEjDAGACcSA4kB6ARiAAAAAElFTkSuQmCC"
             },
           },
         },

@@ -3,7 +3,7 @@ const foodRouter = require('./food')
 const categoriesRouter = require('./categories')
 
 router.get('/', (req, res) => {
-    res.send('homepage')
+    res.redirect('/api-docs')
 })
 
 router.use('/food', foodRouter)

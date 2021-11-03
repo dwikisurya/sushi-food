@@ -2,7 +2,8 @@ module.exports = {
     // method of operation
     post: {
       tags: ["Food CRUD"], // operation's tag.
-      description: "Create new Food", // operation's desc.
+      summary: "Create a new Food",
+      description: "Create a new Food", // operation's desc.
       operationId: "postFood", // unique operation id.
       requestBody: 
           {

@@ -1,11 +1,12 @@
 module.exports = {
     tags:[
         {
-            name: "Food CRUD"
+            name: "Food CRUD",
+            description: "CRUD Operations needed for food."
         },
         {
-            name: "Categories CRUD"
+            name: "Categories CRUD",
+            description: "CRUD Operations needed for categories"
         }
-
-    ],
+    ]   
 }

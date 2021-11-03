@@ -1,4 +1,6 @@
 const food = require('../models/food')
+const imgbbUploader = require("imgbb-uploader")
+const multer = require('multer')
 
 module.exports = class FoodControllers {
     
@@ -29,18 +31,28 @@ module.exports = class FoodControllers {
 
     // Create
     static create(request, response){
-        const {idCategories, name, description, imgURL} = request.body
+        const {idCategories, name, description, base64} = request.body
 
-        food.create({
+        const options = {
+            apiKey: process.env.IMGBB_API_KEY, // MANDATORY                              
+            base64string: base64
+          };
+        
+          imgbbUploader(options)
+          .then((res) =>  
+          food.create({
             idCategories,
             name,
             description,
-            imgURL
+            imgURL: res.url
         }).then((result) => {
+            console.log({result})
             response.status(201).json({ msg: 'Data Berhasil Ditambah'})
         }).catch((err) => {
             response.status(500).json(err)
-        })
+        }))
+          .catch((error) => console.error(error));
+
     }
 
  }

@@ -2,6 +2,7 @@ module.exports = {
     // method of operation
     get: {
       tags: ["Food CRUD"], // operation's tag.
+      summary: "Get Food By id",
       description: "Get Food By id", // operation's desc.
       operationId: "getFood", // unique operation id.
       parameters: [

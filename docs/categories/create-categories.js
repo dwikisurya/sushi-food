@@ -2,7 +2,8 @@ module.exports = {
     // method of operation
     post: {
       tags: ["Categories CRUD"], // operation's tag.
-      description: "Create new Categories", // operation's desc.
+      summary: "Create a new Categories",
+      description: "Create a new Categories", // operation's desc.
       operationId: "postCategories", // unique operation id.
       requestBody: 
           {

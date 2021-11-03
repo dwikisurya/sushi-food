@@ -2,7 +2,8 @@ module.exports = {
     // method of operation
     get: {
       tags: ["Categories CRUD"], // operation's tag.
-      description: "Get categories By id", // operation's desc.
+      summary: "Get all categories",
+      description: "Get all categories", // operation's desc.
       operationId: "getCategoriess", // unique operation id.
       parameters: [], // expected params.
       // expected responses
