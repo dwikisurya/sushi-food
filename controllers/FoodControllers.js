@@ -52,7 +52,17 @@ module.exports = class FoodControllers {
             response.status(500).json(err)
         }))
           .catch((error) => console.error(error));
+    }
 
+    static delete(request, response){
+        const id = request.params.id
+        food.findByIdAndDelete(id)
+            .exec()
+            .then((result) => {
+                response.status(303).json({ msg: 'Data Berhasil Dihapus' })
+            }).catch((err) => {
+                response.status(500).json(err)
+            })
     }
 
  }

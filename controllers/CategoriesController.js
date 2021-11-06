@@ -37,5 +37,17 @@ module.exports = class CategoriesControllers{
         })
     }
 
+    // Delete
+    static delete(request, response){
+        const id = request.params.id
+        categories.findByIdAndDelete(id)
+            .exec()
+            .then((result) => {
+                response.status(303).json({ msg: 'Data Berhasil Dihapus' })
+            }).catch((err) => {
+                response.status(500).json(err)
+            })
+    }
+
 
 }
